@@ -18,10 +18,9 @@ const getContactById = async contactId => {
 const addContact = async data => {
   const contacts = await listContacts();
   const newContact = { id: nanoid(), ...data };
-
   contacts.push(newContact);
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
-  return contacts;
+  return newContact;
 };
 
 const updateById = async (id, data) => {
@@ -31,8 +30,8 @@ const updateById = async (id, data) => {
     return null;
   }
   contacts[index] = { id, ...data };
- await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
- return contacts[index];
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  return contacts[index];
 };
 
 const removeContact = async contactId => {

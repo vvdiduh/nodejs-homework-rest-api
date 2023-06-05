@@ -18,7 +18,7 @@ const findContactById = async (req, res, next) => {
 
 const addContact = async (req, res, next) => {
   const result = await contacts.addContact(req.body);
-  res.json(result);
+  res.status(201).json(result);
 };
 
 const editContactById = async (req, res, next) => {
