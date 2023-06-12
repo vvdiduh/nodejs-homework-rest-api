@@ -1,4 +1,4 @@
-const validateBody = require('./validateBody');
+const validateBodyPost = require('./validateBodyPost');
 const validateBodyPut = require('./validateBodyPut');
 
-module.exports = { validateBody, validateBodyPut };
+module.exports = { validateBodyPost, validateBodyPut };
