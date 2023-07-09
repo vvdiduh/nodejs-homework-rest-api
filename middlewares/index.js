@@ -1,4 +1,9 @@
-const validateBodyPost = require('./validateBodyPost');
-const validateBodyPut = require('./validateBodyPut');
+const validateBody = require('./validateBody');
+const handleMongooseErroe = require('./handleMongooseError');
+const isValidId = require('./isValidId');
 
-module.exports = { validateBodyPost, validateBodyPut };
+module.exports = {
+  validateBody,
+  handleMongooseErroe,
+  isValidId,
+};
